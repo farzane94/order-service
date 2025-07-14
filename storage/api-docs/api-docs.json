@@ -34,23 +34,5 @@
                 "scheme": "bearer"
             }
         }
-    },
-    "tags": [
-        {
-            "name": "Auth",
-            "description": "Auth"
-        },
-        {
-            "name": "Posts",
-            "description": "Posts"
-        },
-        {
-            "name": "Profile",
-            "description": "Profile"
-        },
-        {
-            "name": "Users",
-            "description": "Users"
-        }
-    ]
+    }
 }

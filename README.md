@@ -125,7 +125,8 @@ Authorization: Bearer <token>
 ```bash
 docker exec app php artisan orders:update-status
 ```
-
+🌐 phpMyAdmin: http://localhost:8080
+🌐 API: http://localhost:8000
 ---
 
 ## 🛡️ هندل Race Condition
