@@ -5,6 +5,7 @@ namespace Modules\Product\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Modules\Product\Models\Product;
+use Modules\Product\Repositories\ProductRepository;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -29,7 +30,7 @@ class FetchProductsCommand extends Command
     /**
      * Create a new command instance.
      */
-    public function __construct()
+    public function __construct(private ProductRepository $productRepository)
     {
         parent::__construct();
     }
@@ -51,7 +52,7 @@ class FetchProductsCommand extends Command
             return 1;
         }
 
-        $this->syncData($response['products']);
+        $this->productRepository->syncData($response['products']);
 
         $this->info('Products saved successfully ✅');
         return 0;
@@ -77,16 +78,4 @@ class FetchProductsCommand extends Command
         ];
     }
 
-    private function syncData(array $products)
-    {
-        foreach ($products as $item) {
-            Product::updateOrCreate(
-                ['title' => $item['title']],
-                [
-                    'price' => $item['price'],
-                    'stock' => $item['stock'],
-                ]
-            );
-        }
-    }
 }

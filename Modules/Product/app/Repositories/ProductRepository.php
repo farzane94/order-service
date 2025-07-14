@@ -20,4 +20,17 @@ class ProductRepository
         $product->decrement('stock', $quantity);
     }
 
+    public function syncData(array $products)
+    {
+        foreach ($products as $item) {
+            Product::updateOrCreate(
+                ['title' => $item['title']],
+                [
+                    'price' => $item['price'],
+                    'stock' => $item['stock'],
+                ]
+            );
+        }
+    }
+
 }
