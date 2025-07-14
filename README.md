@@ -126,6 +126,8 @@ Authorization: Bearer <token>
 docker exec app php artisan orders:update-status
 ```
 🌐 phpMyAdmin: http://localhost:8080
+
+
 🌐 API: http://localhost:8000
 ---
 
