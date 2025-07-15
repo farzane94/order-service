@@ -18,8 +18,8 @@
 1. کلون کردن پروژه:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
-cd your-project
+git clone https://github.com/farzane94/order-service.git
+cd order-service
 ```
 
 2. کپی فایل محیطی:
